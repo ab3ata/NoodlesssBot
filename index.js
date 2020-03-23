@@ -11,7 +11,7 @@ bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
-        case 'test':
+        case 'apply':
               if(!args[1]){
                 message.channel.send({embed: {
                     color: 0xFFC300,
