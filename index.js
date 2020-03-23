@@ -10,7 +10,7 @@ bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
-        case 'apply staff':
+        case 'StaffApply':
             
               let msgArgs = args.slice(1).join(" ");
 
