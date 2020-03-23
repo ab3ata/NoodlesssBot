@@ -10,6 +10,15 @@ bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
+        case 'help':
+            const help = new Discord.MessageEmbed()
+            .setColor('0xFFC300')
+            .setTitle('Help for commands!')
+            .addFields(
+                { name: '!staffapply', value: 'use !staffapply to apply for staff!' }
+                 )
+                 message.channel.send(help); 
+    switch(args[0]){
         case 'staffapply':
               const filter = m => m.author.id === message.author.id;
               message.channel.send({embed: {
