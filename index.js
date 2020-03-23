@@ -10,7 +10,7 @@ bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
-        case 'test':
+        case 'apply':
               if(!args[1]){
                 message.channel.send({embed: {
                     color: 0xFFC300,
@@ -77,7 +77,7 @@ bot.on('message', message=>{
                     let username7 = collected7.first().content
                     let username8 = collected8.first().content
                     let username9 = collected9.first().content
-                    const Embed = new Discord.MessageEmbed()
+                    const applications = new Discord.MessageEmbed()
 	                .setColor('0xFFC300')
 	                .setTitle('New staff application!')
                     .addFields(
@@ -94,7 +94,7 @@ bot.on('message', message=>{
                     var applicationlog = message.guild.channels.find('name', 'application-log');
                     if(!applicationlog) return message.guild.send("can not find the channel");
 
-                    applicationlog.send(Embed)
+                    applicationlog.send(applications);
             
             })
                 })
