@@ -103,9 +103,10 @@ bot.on('message', message=>{
 })
 })
     })
-    message.delete(18)
+    
             break;
               }
+              message.delete(18)
         })
 
         bot.login(process.env.token);
