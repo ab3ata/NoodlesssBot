@@ -92,7 +92,10 @@ bot.on('message', message=>{
                         { name: 'if you would see anyone hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop', value: username8 },
                         { name: 'if you would see your friend hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop', value: username9 }
                          )
-	                appliaction-log.send(Embed);
+                    var applicationlog = message.guild.channels.find('name', 'application-log');
+                    if(!applicationlog) return message.guild.send("can not find the channel");
+
+                    applicationlog.send(Embed)
             
             })
                 })
