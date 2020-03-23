@@ -17,7 +17,7 @@ bot.on('message', message=>{
             .addFields(
                 { name: '!staffapply', value: 'use !staffapply to apply for staff!' }
                  )
-                 message.channel.send(help); 
+                 channel.send(help); 
     switch(args[0]){
         case 'staffapply':
               const filter = m => m.author.id === message.author.id;
