@@ -104,6 +104,6 @@ bot.on('message', message=>{
 })
     break;
     }
-})
+}})
 
         bot.login(process.env.token);
