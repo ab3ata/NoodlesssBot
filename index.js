@@ -19,7 +19,7 @@ bot.on('message', message=>{
                   break;
               }
             
-              let msgArgs = args.slice(1).join(" ");
+              let msgArgs = args.slice(1).join("staff");
 
               const filter = m => m.author.id === message.author.id;
               message.channel.send({embed: {
