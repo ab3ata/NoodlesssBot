@@ -103,7 +103,7 @@ bot.on('message', message=>{
 })
 })
     })
-    
+    message.delete(19);
             break;
               }
         })
