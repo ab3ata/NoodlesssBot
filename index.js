@@ -11,9 +11,6 @@ bot.on('message', message=>{
 
     switch(args[0]){
         case 'staffapply':
-            
-              let msgArgs = args.slice(1).join(" ");
-
               const filter = m => m.author.id === message.author.id;
               message.channel.send({embed: {
                 color: 0xFFC300,
@@ -87,18 +84,17 @@ bot.on('message', message=>{
                          var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
                          kanaal.send(applications); 
             
-            })
+                        })
+                    })
                 })
-              })
             })
         })
     })
 })
 })
-    })
-    message.delete(19);
-            break;
-              }
-        })
+})
+    break;
+    }
+})
 
         bot.login(process.env.token);
