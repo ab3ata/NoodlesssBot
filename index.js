@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const token = 'NjkxNjc3OTQ0MTcwNTQ1MTcy.Xnjdtw.ys0GgloxDTlbyyhdRVhXIXF93WE';
-
 const PREFIX = '!'
 
 bot.on('ready', () =>{
@@ -94,7 +92,7 @@ bot.on('message', message=>{
                         { name: 'if you would see anyone hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop', value: username8 },
                         { name: 'if you would see your friend hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop', value: username9 }
                          )
-	                channel.send(Embed)
+	                appliaction-log.send(Embed);
             
             })
                 })
