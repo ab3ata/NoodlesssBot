@@ -18,6 +18,7 @@ bot.on('message', message=>{
                 { name: '!staffapply', value: 'use !staffapply to apply for staff!' }
                  )
                  channel.send(help); 
+    }
     switch(args[0]){
         case 'staffapply':
               const filter = m => m.author.id === message.author.id;
@@ -104,6 +105,6 @@ bot.on('message', message=>{
 })
     break;
     }
-}})
+    })
 
         bot.login(process.env.token);
