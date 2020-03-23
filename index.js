@@ -10,16 +10,9 @@ bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
-        case 'apply':
-              if(!args[1]){
-                message.channel.send({embed: {
-                    color: 0xFFC300,
-                    description: "!apply staff to apply for staff"
-                  }});
-                  break;
-              }
+        case 'apply staff':
             
-              let msgArgs = args.slice(1).join("staff");
+              let msgArgs = args.slice(1).join(" ");
 
               const filter = m => m.author.id === message.author.id;
               message.channel.send({embed: {
