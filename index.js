@@ -40,9 +40,25 @@ bot.on("message", async message => {
             .setDescription("Discord bot info")
             .setColor('#8c6607')
             .setThumbnail(botIcon)
-            .addField('bot naam', bot.user.username);
+            .addField('bot naam', bot.user.username)
+            .addField("gemaakt op", bot.user.createdAt);
 
         return message.channel.send(botEmbed);
+
+    }
+
+    if (command === `${prefix}serverinfo`) {
+
+        var icon = message.guild.iconURL;
+
+        var serverEmbed = new discord.MessageEmbed()
+            .setDescription("server info")
+            .setColor('#8c6607')
+            .setThumbnail(Icon)
+            .addField('bot naam', bot.user.username)
+            .addField("gemaakt op", bot.user.createdAt);
+
+            return message.channel.send(serverEmbed);
 
     }
 
