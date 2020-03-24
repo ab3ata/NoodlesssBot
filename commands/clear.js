@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!args[0]) return message.reply("Give a number!");
 
-    if (Number.isInteger(praseInt(args[0]))) {
+    if (Number.isInteger(parseInt(args[0]))) {
 
         var amount = ParseInt(args[0]) + 1;
 
