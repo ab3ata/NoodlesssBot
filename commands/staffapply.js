@@ -95,8 +95,8 @@ const vote = new discord.MessageEmbed()
               { name: 'please vote by pressing the thumb up or down'},
               { name: 'alo leave a comment under the application why you voted that!'}
                )
-               var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-               kanaal.send(applications).then(messageReaction => {
+               var kanaal2 = message.guild.channels.cache.find(c => c.name == "application-log");
+               kanaal2.send(vote).then(messageReaction => {
                    messageReaction.react("👍");
                    messageReaction.react("👎");
                });
