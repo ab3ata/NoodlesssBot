@@ -2,8 +2,6 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-    if (!message.member.hasPermissions("MANAGE_MESSAGES")) return message.reply("You dont have permission");
-
     if (!args[0]) return message.reply("Give a number!");
 
     if (Number.isInteger(praseInt(args[0]))) {
