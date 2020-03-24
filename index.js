@@ -8,17 +8,18 @@ bot.on('ready', () =>{
 
 bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
- 
     switch(args[0]){
         case 'help':
-            const help = new Discord.MessageEmbed()
+                    const help = new Discord.MessageEmbed()
 	                .setColor('0xFFC300')
-	                .setTitle('Command Help List')
+	                .setTitle('New staff application!')
                     .addFields(
-                        { name: '!staffapply', value: 'do !staffapply to apply for staff' },
-                              )
+                        { name: '!staffapply', value: 'do !staffapply to apply for staff' }
+                         )
                          channel.send(help); 
-                        }})
+    break;
+    }
+    })
 bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
     switch(args[0]){
