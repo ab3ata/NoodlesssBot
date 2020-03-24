@@ -84,7 +84,6 @@ module.exports.run = async (bot, message, args) => {
 })
 })
 })
-break;
 }
 module.exports.help = {
     name: "staffapply"
