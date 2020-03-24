@@ -77,17 +77,7 @@ module.exports.run = async (bot, message, args) => {
                )
             .setFooter("You can vote by clicking the thumbs up or down also leave a comment why you voted this!")
                var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-               kanaal.send(applications).then(messageReaction => {
-                const filter = (reaction, user) => {
-                    return reaction.emoji.name === '👌' && user.id === message.author.id;
-                };
-                
-                message.awaitReactions(filter, { max: 4, time: 15000, errors: ['time'] })
-                    .then(collected => console.log(collected.size))
-                    .catch(collected => {
-                        console.log(`After a minute, only ${collected.size} out of 4 reacted.`);
-                    });
-                });
+               kanaal.send(applications);
               })
           })
       })
