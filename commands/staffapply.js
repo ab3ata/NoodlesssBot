@@ -100,12 +100,12 @@ module.exports.run = async (bot, message, args) => {
                                             messageReaction.react("👎");
                                         });
                                         const filter2 = (reaction, user) => reaction.emoji.name === '👍'
-                                        const collector = message.createReactionCollector(filter, { time: 15000 });
+                                        const collector2 = message.createReactionCollector(filter, { time: 15000 });
                                         collector2.on('collect', r => console.log(`Collected ${r.emoji.name}`));
                                         collector2.on('end', collected => console.log(`Collected ${collected.size} items`));
 
                                         const filter3 = (reaction, user) => reaction.emoji.name === '👎'
-                                        const collector = message.createReactionCollector(filter, { time: 15000 });
+                                        const collector3 = message.createReactionCollector(filter, { time: 15000 });
                                         collector3.on('collect', r => console.log(`Collected ${r.emoji.name}`));
                                         collector3.on('end', collected => console.log(`Collected ${collected.size} items`));
                                     })
