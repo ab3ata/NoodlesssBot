@@ -54,7 +54,7 @@ bot.on("message", async message => {
         var serverEmbed = new discord.MessageEmbed()
             .setDescription("server info")
             .setColor('#8c6607')
-            .setThumbnail(Icon)
+            .setThumbnail(icon)
             .addField('bot naam', bot.user.username)
             .addField("gemaakt op", bot.user.createdAt);
 
