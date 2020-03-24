@@ -101,13 +101,13 @@ module.exports.run = async (bot, message, args) => {
                                         });
                                         const filter2 = (reaction, user) => reaction.emoji.name === '👍'
                                         const collector = message.createReactionCollector(filter, { time: 15000 });
-                                        collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-                                        collector.on('end', collected => console.log(`Collected ${collected.size} items`));
+                                        collector2.on('collect', r => console.log(`Collected ${r.emoji.name}`));
+                                        collector2.on('end', collected => console.log(`Collected ${collected.size} items`));
 
                                         const filter3 = (reaction, user) => reaction.emoji.name === '👎'
                                         const collector = message.createReactionCollector(filter, { time: 15000 });
-                                        collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-                                        collector.on('end', collected => console.log(`Collected ${collected.size} items`));
+                                        collector3.on('collect', r => console.log(`Collected ${r.emoji.name}`));
+                                        collector3.on('end', collected => console.log(`Collected ${collected.size} items`));
                                     })
                                 })
                             })
