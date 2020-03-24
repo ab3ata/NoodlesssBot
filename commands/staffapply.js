@@ -104,10 +104,6 @@ module.exports.run = async (bot, message, args) => {
                                         const filter = (reaction, user) => reaction.emoji.name === '👍' && user.id === '489112265078079488';
                                         const collector = message.createReactionCollector(filter, { time: 15000 });
                                         collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-
-                                        const filter = (reaction, user) => reaction.emoji.name === '👎' && user.id === '489112265078079488';
-                                        const collector = message.createReactionCollector(filter, { time: 15000 });
-                                        collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
                                     })
                                 })
                             })
