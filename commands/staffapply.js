@@ -96,8 +96,6 @@ module.exports.run = async (bot, message, args) => {
                                             .setFooter("You can vote by clicking the thumbs up or down also leave a comment why you voted this!")
                                         var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
                                         kanaal.send(applications).then(messageReaction => {
-                                            messageReaction.react("👍");
-                                            messageReaction.react("👎");
                                         });
                                         const filter2 = (reaction, user) => reaction.emoji.name === '👍'
                                         const collector2 = message.createReactionCollector(filter, { time: 15000 });
