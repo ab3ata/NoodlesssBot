@@ -6,7 +6,9 @@ const bot = new discord.Client();
 
 bot.on("ready", async () => {
 
-    console.log('${bot.user.username} is online')
+    console.log('${bot.user.username} is online');
+
+    bot.user.setActivity("LightMc", {type: "PLAYING"});
 
 })
 
