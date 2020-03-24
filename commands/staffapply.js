@@ -87,21 +87,16 @@ module.exports.run = async (bot, message, args) => {
 })
 })
 })
-message.channel.awaitMessages(filter, {max: 1}).then(collected9 => {
+message.channel.awaitMessages(filter, {max: 1});
 const vote = new discord.MessageEmbed()
           .setColor('0xFFC300')
           .setTitle('Voting')
-          .addFields(
-              { name: `vote!`, value: 'vote for the new staff application!' },
-              { name: 'how?', value:'please vote by pressing the thumb up or down'},
-              { name: 'also!', value:'alo leave a comment under the application why you voted that!'}
-               )
+          .setDescription("vote here for the new application press the thumbs up or down and leave a comment why you voted that!")
                var kanaal2 = message.guild.channels.cache.find(c => c.name == "application-log");
                kanaal2.send(vote).then(messageReaction => {
                    messageReaction.react("👍");
                    messageReaction.react("👎");
-               });
-            })
+               })
 }
 
 module.exports.help = {
