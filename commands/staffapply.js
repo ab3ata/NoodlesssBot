@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
                                       description: "if you would see your friend hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop"
                                   }})
           message.channel.awaitMessages(filter, {max: 1}).then(collected9 => {
-            message.channel.bulkDelete(18, true).catch(err => {
+            message.channel.bulkDelete(19, true).catch(err => {
                 console.error(err);
                 message.channel.send('there was an error trying to prune messages in this channel!');
             });
