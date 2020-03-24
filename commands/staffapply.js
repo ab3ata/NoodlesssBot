@@ -75,8 +75,25 @@ module.exports.run = async (bot, message, args) => {
               { name: 'if you would see anyone hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop', value: username8 },
               { name: 'if you would see your friend hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop', value: username9 }
                )
+            .setFooter("You can vote by clicking the thumbs up or down also leave a comment why you voted this!")
                var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-               kanaal.send(applications); 
+               kanaal.send(applications).then(messageReaction => {
+                messageReaction.react("👍");
+                messageReaction.react("👎");
+            })
+            const filter = (reaction, user) => {
+                return reaction.emoji.name === '👍' && user.id === message.author.id;
+            };
+            
+            const collector = message.createReactionCollector(filter, { time: 15000 });
+            
+            collector.on('collect', (reaction, reactionCollector) => {
+                console.log(`Collected ${reaction.emoji.name}`);
+            });
+            
+            collector.on('end', collected => {
+                console.log(`Collected ${collected.size} items`);
+            });
               })
           })
       })
@@ -86,15 +103,6 @@ module.exports.run = async (bot, message, args) => {
 })
 })
 })
-const vote = new discord.MessageEmbed()
-          .setColor('0xFFC300')
-          .setTitle('Voting')
-          .setDescription("vote here for the new application press the thumbs up or down and leave a comment why you voted that!")
-               var kanaal2 = message.guild.channels.cache.find(c => c.name == "application-log");
-               kanaal2.send(vote).then(messageReaction => {
-                   messageReaction.react("👍");
-                   messageReaction.react("👎");
-               })
 }
 
 module.exports.help = {
