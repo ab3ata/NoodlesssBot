@@ -9,6 +9,7 @@ collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
 collector.on('end', collected => console.log(`Collected ${collected.size} items`));
 }
 
+messageReaction.react("👍");
 module.exports.help = {
     name: "test"
 }
