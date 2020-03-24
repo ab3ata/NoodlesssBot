@@ -1,7 +1,32 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 
+const fs = require("fs")
+
 const bot = new discord.Client();
+bot.commands = new discord.Collection();
+
+fs.readdir("./commands/", (err, files) => {
+
+    if (err) console.log(err);
+
+    var jsFiles = files.filter(f => f.split(".").pop() === "js");
+
+    if (jsFiles.length <= 0) {
+        console.log("kan geen files vinden");
+        return;
+    }
+
+    jsFiles.forEach((f, i) => {
+
+        var fileGet = require(`./commands/${f}`);
+        console.log(`de file ${f} is geladen`);
+
+        bot.commands.set(fileGet.help.name, fileGet);
+
+    })
+
+});
 
 
 bot.on("ready", async () => {
@@ -16,6 +41,8 @@ bot.on("message", async message => {
 
     if (message.author.bot) return;
 
+
+
     if (message.channel.type === "dm") return;
 
     var prefix = botConfig.prefix;
@@ -26,11 +53,17 @@ bot.on("message", async message => {
 
     var arguments = messageArray.slice(1);
 
-    if (command === `${prefix}hallo`) {
 
-        return message.channel.send("Hallo");
+    var commands = bot.commands.get(command.slice(prefix.length));
 
-    }
+    if(commands) commands.run(bot, message, arguments);
+
+
+    // if (command === `${prefix}hallo`) {
+
+    //     return message.channel.send("Hallo");
+
+    // }
 
     if (command === `${prefix}info`) {
 
@@ -63,7 +96,7 @@ bot.on("message", async message => {
 
 
 
-            return message.channel.send(serverEmbed);
+        return message.channel.send(serverEmbed);
 
     }
 
@@ -72,23 +105,23 @@ bot.on("message", async message => {
 
         var kickUser = message.guild.member(message.mentions.users.first() || message.guild.members(arguments[0]));
 
-        if(!kickUser) return message.channel.send("User not found");
+        if (!kickUser) return message.channel.send("User not found");
 
         var reason = arguments.join(" ").slice(22);
 
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("srry you cant do this!");
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("srry you cant do this!");
 
-        if(kickUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("you cant kick this player");
+        if (kickUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("you cant kick this player");
 
         var kick = new discord.MessageEmbed()
-        .setDescription("kick")
-        .setColor("#8c6607")
-        .addField("Kicked User", kickUser)
-        .addField("Kicked By", message.author)
-        .addField("reason", reason);
+            .setDescription("kick")
+            .setColor("#8c6607")
+            .addField("Kicked User", kickUser)
+            .addField("Kicked By", message.author)
+            .addField("reason", reason);
 
         var kickChannel = message.guild.channel.find("name", "commands");
-        if(!kickChannel) return message.guild.send("Cant find the channel!");
+        if (!kickChannel) return message.guild.send("Cant find the channel!");
 
         message.guild.member(kickUser).kick(reason);
 
@@ -101,31 +134,32 @@ bot.on("message", async message => {
 
         var banUser = message.guild.member(message.mentions.users.first() || message.guild.members(arguments[0]));
 
-        if(!banUser) return message.channel.send("User not found");
+        if (!banUser) return message.channel.send("User not found");
 
         var reason = arguments.join(" ").slice(22);
 
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("srry you cant do this!");
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("srry you cant do this!");
 
-        if(banUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("you cant ban this player");
+        if (banUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("you cant ban this player");
 
         var ban = new discord.MessageEmbed()
-        .setDescription("ban")
-        .setColor("#8c6607")
-        .addField("banned User", banUser)
-        .addField("banned By", message.author)
-        .addField("reason", reason);
+            .setDescription("ban")
+            .setColor("#8c6607")
+            .addField("banned User", banUser)
+            .addField("banned By", message.author)
+            .addField("reason", reason);
 
         var banChannel = message.guild.channel.find("name", "commands");
-        if(!banChannel) return message.guild.send("Cant find the channel!");
+        if (!banChannel) return message.guild.send("Cant find the channel!");
 
         message.guild.member(banUser).ban(reason);
 
         banChannel.send(ban);
 
         return;
+
     }
-    
+
 });
 
 
