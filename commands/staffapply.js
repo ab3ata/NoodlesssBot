@@ -58,7 +58,7 @@ module.exports.run = async (bot, message, args) => {
           let username7 = collected7.first().content
           let username8 = collected8.first().content
           let username9 = collected9.first().content
-          const applications = new Discord.MessageEmbed()
+          const applications = new discord.MessageEmbed()
           .setColor('0xFFC300')
           .setTitle('New staff application!')
           .addFields(
