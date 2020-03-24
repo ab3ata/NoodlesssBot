@@ -26,7 +26,7 @@ bot.on("message", async message => {
 
     var arguments = messageArray.slice(1);
 
-    if (command === '${prefix}hallo') {
+    if (command === `${prefix}hallo`) {
 
         return message.channel.send("Hallo")
 
