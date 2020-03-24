@@ -79,7 +79,7 @@ module.exports.run = async (bot, message, args) => {
                var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
                kanaal.send(applications).then(messageReaction => {
                 const filter = (reaction, user) => {
-                    return reaction.emoji.name === '👍' && user.id === message.author.id;
+                    return reaction.emoji.name === '👌' && user.id === message.author.id;
                 };
                 
                 const collector = message.createReactionCollector(filter, { time: 15000 });
