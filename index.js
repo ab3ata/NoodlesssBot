@@ -10,7 +10,7 @@ fs.readdir("./commands/" , (err, Files) => {
 
     if(err) console.log(err);
 
-    var jsFiles = files.filter(f => f.split(".").pop() === "js")
+    var jsFiles = files.filter(f => f.split(".").pop() === "js");
 
     if(jsFiles.length <=0) {
         console.log("kan geen files vinden");
