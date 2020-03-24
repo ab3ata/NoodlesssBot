@@ -96,16 +96,15 @@ module.exports.run = async (bot, message, args) => {
                                             .setFooter("You can vote by clicking the thumbs up or down also leave a comment why you voted this!")
                                         var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
                                         kanaal.send(applications).then(messageReaction => {
-                                        });
-                                        const filter2 = (reaction, user) => reaction.emoji.name === '👍'
-                                        const collector2 = message.createReactionCollector(filter, { time: 15000 });
-                                        collector2.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-                                        collector2.on('end', collected => console.log(`Collected ${collected.size} items`));
+                                            messageReaction.react("👍");
+                                            messageReaction.react("👎");
 
-                                        const filter3 = (reaction, user) => reaction.emoji.name === '👎'
-                                        const collector3 = message.createReactionCollector(filter, { time: 15000 });
-                                        collector3.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-                                        collector3.on('end', collected => console.log(`Collected ${collected.size} items`));
+                                        });
+
+                                        const filter = (reaction, user) => reaction.emoji.name === '👍'
+                                        const collector = message.createReactionCollector(filter, { time: 15000 });
+                                        collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
+                                        collector.on('end', collected => console.log(`Collected ${collected.size} items`));
                                     })
                                 })
                             })
