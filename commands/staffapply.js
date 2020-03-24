@@ -77,7 +77,6 @@ module.exports.run = async (bot, message, args) => {
                )
                var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
                kanaal.send(applications); 
-               message.channel.awaitMessages(filter, {max: 1});
               })
           })
       })
