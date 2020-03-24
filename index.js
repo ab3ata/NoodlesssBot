@@ -28,7 +28,7 @@ bot.on("message", async message => {
 
     if (command === `${prefix}hallo`) {
 
-        return message.channel.send("Hallo")
+        return message.channel.send("Hallo");
 
     }
 
