@@ -102,9 +102,8 @@ module.exports.run = async (bot, message, args) => {
                                         });
 
                                         const filter = (reaction, user) => reaction.emoji.name === '👍'
-                                        const collector = message.createReactionCollector(filter, { time: 15000 });
+                                        const collector = message.createCollector();
                                         collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-                                        collector.on('end', collected => console.log(`Collected ${collected.size} items`));
                                     })
                                 })
                             })
