@@ -47,12 +47,11 @@ module.exports.run = async (bot, message, args) => {
                                       color: 0xFFC300,
                                       description: "if you would see your friend hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop"
                                   }})
-                                
-                                  message.channel.bulkDelete(18, true).catch(err => {
-                                    console.error(err);
-                                    message.channel.send('there was an error trying to prune messages in this channel!');
-                                });
           message.channel.awaitMessages(filter, {max: 1}).then(collected9 => {
+            message.channel.bulkDelete(18, true).catch(err => {
+                console.error(err);
+                message.channel.send('there was an error trying to prune messages in this channel!');
+            });
           let username = collected.first().content
           let username2 = collected2.first().content
           let username3 = collected3.first().content
