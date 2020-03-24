@@ -32,6 +32,16 @@ bot.on("message", async message => {
 
     }
 
+    if (command === `${prefix}info`) {
+        var botEmbed = new discord.MessageEmbed()
+            .setDescription("Discord bot info")
+            .setColor('#8c6607')
+            .addField('bot naam', bot.user.username);
+
+        return message.channel.send(botEmbed);
+
+    }
+
 });
 
 
