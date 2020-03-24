@@ -87,6 +87,19 @@ module.exports.run = async (bot, message, args) => {
 })
 })
 })
+const vote = new discord.MessageEmbed()
+          .setColor('0xFFC300')
+          .setTitle('Voting')
+          .addFields(
+              { name: `You can vote here for the staff application`},
+              { name: 'please vote by pressing the thumb up or down'},
+              { name: 'alo leave a comment under the application why you voted that!'}
+               )
+               var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
+               kanaal.send(applications).then(messageReaction => {
+                   messageReaction.react("👍");
+                   messageReaction.react("👎");
+               });
 }
 module.exports.help = {
     name: "staffapply"
