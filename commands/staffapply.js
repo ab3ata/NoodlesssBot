@@ -109,8 +109,8 @@ module.exports.run = async (bot, message, args) => {
     .setTitle('vote!');
 
 message.channel.send(embed).then(msg => {
-    msg.react(`👍`)
-    msg.awaitReactions(`👍`)
+    msg.react(blaablaa)
+    msg.awaitReactions(blaablaa)
 })
 .catch(collected => {
     message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
