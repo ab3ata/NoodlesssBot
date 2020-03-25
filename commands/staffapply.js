@@ -97,6 +97,13 @@ module.exports.run = async (bot, message, args) => {
                                         var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
                                         kanaal.send(applications);
 
+                                        let embed = new discord.MessageEmbed()
+                                        .setTitle('vote!');
+                                
+                                    message.channel.send(embed).then(msg => {
+                                        msg.react(`👍`)
+                                        msg.awaitReactions(`👍`)
+                                    })
                                     })
                                 })
                             })
