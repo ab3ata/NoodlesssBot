@@ -8,10 +8,10 @@ module.exports.run = async (bot, message, args) => {
             color: 0xFFC300,
             description: "minecraft name:"
         }
-    })
-    .catch(collected => {
-		message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-	});
+        .catch(collected => {
+            message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+        })
+    });
     message.channel.awaitMessages(filter, { max: 1 }).then(collected => {
         message.channel.send({
             embed: {
