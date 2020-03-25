@@ -112,6 +112,9 @@ message.channel.send(embed).then(msg => {
     msg.react(`👍`)
     msg.awaitReactions(`👍`)
 })
+.catch(collected => {
+    message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+});
 }
 module.exports.help = {
     name: "staffapply"
