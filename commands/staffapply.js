@@ -95,19 +95,26 @@ module.exports.run = async (bot, message, args) => {
                                             )
                                             .setFooter("You can vote by clicking the thumbs up or down also leave a comment why you voted this!")
                                         var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-                                        kanaal.send(applications).then(messageReaction => {
-                                            messageReaction.react("👍");
-                                            messageReaction.react("👎");
+                                        kanaal.send(applications);
+                                        message.react('👍').then(() => message.react('👎'));
 
-                                        });
+                                        const filter = (reaction, user) => {
+                                            return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
+                                        };
 
-                                        const filter = (reaction, user) => reaction.emoji.name === '👍' && user.id === '489112265078079488';
-                                        const collector = message.createReactionCollector(filter, { time: 15000 });
-                                        collector.on('collect', r => message.channel.send(`application accepted`));
+                                        message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+                                            .then(collected => {
+                                                const reaction = collected.first();
 
-                                        const filter2 = (reaction, user) => reaction.emoji.name === '👎' && user.id === '489112265078079488';
-                                        const collector2 = message.createReactionCollector(filter2, { time: 15000 });
-                                        collector2.on('collect', r => message.channel.send(`applications declined`));
+                                                if (reaction.emoji.name === '👍') {
+                                                    message.reply('you reacted with a thumbs up.');
+                                                } else {
+                                                    message.reply('you reacted with a thumbs down.');
+                                                }
+                                            })
+                                            .catch(collected => {
+                                                message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                                            });
                                     })
                                 })
                             })
