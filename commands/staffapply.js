@@ -18,29 +18,31 @@ module.exports.run = async (bot, message, args) => {
                 color: 0xFFC300,
                 description: "real name: (not needed)"
             }
-        })
-        .catch(collected => {
-            message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+            .catch(collected => {
+                message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+            })
         });
+
         message.channel.awaitMessages(filter, { max: 1 }).then(collected2 => {
             message.channel.send({
                 embed: {
                     color: 0xFFC300,
                     description: "age:"
                 }
-            })
-            .catch(collected => {
-                message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                .catch(collected => {
+                    message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                })
             });
+
             message.channel.awaitMessages(filter, { max: 1 }).then(collected3 => {
                 message.channel.send({
                     embed: {
                         color: 0xFFC300,
                         description: "why do you want to be staff?"
                     }
-                })
-                .catch(collected => {
-                    message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                    .catch(collected => {
+                        message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                    })
                 });
                 message.channel.awaitMessages(filter, { max: 1 }).then(collected4 => {
                     message.channel.send({
@@ -48,9 +50,9 @@ module.exports.run = async (bot, message, args) => {
                             color: 0xFFC300,
                             description: "have you ever been staff before?"
                         }
-                    })
-                    .catch(collected => {
-                        message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                        .catch(collected => {
+                            message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                        })
                     });
                     message.channel.awaitMessages(filter, { max: 1 }).then(collected5 => {
                         message.channel.send({
@@ -58,9 +60,9 @@ module.exports.run = async (bot, message, args) => {
                                 color: 0xFFC300,
                                 description: "howlong have you been playing on the server?"
                             }
-                        })
-                        .catch(collected => {
-                            message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                            .catch(collected => {
+                                message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                            })
                         });
                         message.channel.awaitMessages(filter, { max: 1 }).then(collected6 => {
                             message.channel.send({
@@ -68,9 +70,9 @@ module.exports.run = async (bot, message, args) => {
                                     color: 0xFFC300,
                                     description: "Have you ever been banned?"
                                 }
-                            })
-                            .catch(collected => {
-                                message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                                .catch(collected => {
+                                    message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                                })
                             });
                             message.channel.awaitMessages(filter, { max: 1 }).then(collected7 => {
                                 message.channel.send({
@@ -78,9 +80,9 @@ module.exports.run = async (bot, message, args) => {
                                         color: 0xFFC300,
                                         description: "if you would see anyone hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop"
                                     }
-                                })
-                                .catch(collected => {
-                                    message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                                    .catch(collected => {
+                                        message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                                    })
                                 });
                                 message.channel.awaitMessages(filter, { max: 1 }).then(collected8 => {
                                     message.channel.send({
@@ -88,18 +90,15 @@ module.exports.run = async (bot, message, args) => {
                                             color: 0xFFC300,
                                             description: "if you would see your friend hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop"
                                         }
-                                    })
-                                    .catch(collected => {
-                                        message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                                        .catch(collected => {
+                                            message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                                        })
                                     });
                                     message.channel.awaitMessages(filter, { max: 1 }).then(collected9 => {
                                         message.channel.bulkDelete(19, true).catch(err => {
                                             console.error(err);
                                             message.channel.send('there was an error trying to prune messages in this channel!');
                                         })
-                                        .catch(collected => {
-                                            message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-                                        });
                                         let username = collected.first().content
                                         let username2 = collected2.first().content
                                         let username3 = collected3.first().content
@@ -141,10 +140,10 @@ module.exports.run = async (bot, message, args) => {
 message.channel.send(embed).then(msg => {
     msg.react(`👎`)
     msg.awaitReactions(`👎`)
+    .catch(collected => {
+        message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+    });
 })
-.catch(collected => {
-    message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-});
 }
 module.exports.help = {
     name: "staffapply"
