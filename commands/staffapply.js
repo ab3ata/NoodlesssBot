@@ -95,27 +95,8 @@ module.exports.run = async (bot, message, args) => {
                                             )
                                             .setFooter("You can vote by clicking the thumbs up or down also leave a comment why you voted this!")
                                         var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-                                        kanaal.send(applications).then(messasgeReaction => {
-                                            message.react('👍').then(() => message.react('👎'));
+                                        kanaal.send(applications);
 
-                                            const filter = (reaction, user) => {
-                                                return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
-                                            };
-    
-                                            message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-                                                .then(collected => {
-                                                    const reaction = collected.first();
-    
-                                                    if (reaction.emoji.name === '👍') {
-                                                        message.reply('you reacted with a thumbs up.');
-                                                    } else {
-                                                        message.reply('you reacted with a thumbs down.');
-                                                    }
-                                                })
-                                                .catch(collected => {
-                                                    message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-                                                });
-                                        })
                                     })
                                 })
                             })
@@ -125,8 +106,35 @@ module.exports.run = async (bot, message, args) => {
             })
         })
     })
-}
+    const Acceptordecline = new discord.MessageEmbed()
+        .setColor('0xFFC300')
+        .setTitle('TEST')
+        .addFields(
+            { name: 'test', value: username }
+        )
+    var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
+    kanaal.send(Acceptordecline);
+    message.react('👍').then(() => message.react('👎'));
 
-module.exports.help = {
+const filter = (reaction, user) => {
+	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
+};
+
+message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	.then(collected => {
+		const reaction = collected.first();
+
+		if (reaction.emoji.name === '👍') {
+			message.reply('you reacted with a thumbs up.');
+		} else {
+			message.reply('you reacted with a thumbs down.');
+		}
+	})
+	.catch(collected => {
+		message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+	});
+    
+    module.exports.help = {
+    }
     name: "staffapply"
 }
