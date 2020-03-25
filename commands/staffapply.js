@@ -106,18 +106,15 @@ module.exports.run = async (bot, message, args) => {
             })
         })
     })
-    const Acceptordecline = new discord.MessageEmbed()
-        .setColor('0xFFC300')
-        .setTitle('TEST')
-        .addFields(
-            { name: 'test', value: username }
-        )
-    var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-    kanaal.send(Acceptordecline).then(messageReaction => {
-        message.react('👍').then(() => message.react('👎'));
+
+    let embed = new Discord.MessageEmbed()
+        .setTitle('oof');
+
+    message.channel.send(embed).then(msg => {
+        msg.react(`🤔`)
+        msg.awaitReactions(`🤔`)
     })
-    
-    }
-    module.exports.help = {
+}
+module.exports.help = {
     name: "staffapply"
 }
