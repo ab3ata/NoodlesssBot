@@ -117,7 +117,7 @@ module.exports.run = async (bot, message, args) => {
         message.react('👍').then(() => message.react('👎'));
     })
     
-    module.exports.help = {
     }
+    module.exports.help = {
     name: "staffapply"
 }
