@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    let embed = new Discord.MessageEmbed()
+    let embed = new discord.MessageEmbed()
         .setTitle('oof');
 
     message.channel.send(embed).then(msg => {
