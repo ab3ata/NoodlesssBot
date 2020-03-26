@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
-    for (var i=0; i < 1; i++) {
+    for (var i=0; i < 10; i++) {
         message.channel.send({
             embed: {
                 color: 0xFFC300,
