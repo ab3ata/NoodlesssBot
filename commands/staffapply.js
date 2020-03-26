@@ -1,12 +1,7 @@
 const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
     const filter = m => m.author.id === message.author.id;
-    mylist = [`Welcome`];
-    mylist[1] = [`hru doing`];
-    mylist[2] = [`test`];
-    mylist[3] = [`OK!!!!`];
-    mylist[4] = [`when??`];
-    mylist[5] = [`helppp meee`];
+    mylist = [`Welcome`, `when??`, `how are you doing`, `when did you decided to ?`, `urg testmessages`];
     for (var i = 0; i < mylist.length; i++) {
             message.channel.send({
                 embed: {
