@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send({
             embed: {
                 color: 0xFFC300,
-                description: `mylist[i]`
+                description: mylist[i]
             }})
     }
 
