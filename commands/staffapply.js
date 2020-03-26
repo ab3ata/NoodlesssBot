@@ -1,10 +1,11 @@
 const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
-    for (var i=0; i < 10; i++) {
+    mylist = [`testing`, `tesstterrr`];
+    for (var i=0; i < mylist.length; i++) {
         message.channel.send({
             embed: {
                 color: 0xFFC300,
-                description: "this is a test"
+                description: `mylist[i]`
             }})
     }
 
