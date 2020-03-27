@@ -14,10 +14,6 @@ module.exports.run = async (bot, message, args) => {
             })
         })
     }
-            let username = collected.first().content
-            const applications = new discord.MessageEmbed()
-                .setColor('0xFFC300')
-                .setTitle(username);
 }
 module.exports.help = {
     name: "test"
