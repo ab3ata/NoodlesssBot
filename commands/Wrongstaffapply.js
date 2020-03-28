@@ -94,11 +94,11 @@ module.exports.run = async (bot, message, args) => {
                                     });
                                     message.channel.awaitMessages(filter, { max: 1 }).then(collected9 => {
                                         message.channel.send({
-                                            embed: {
+ 
+                                                     embed: {
                                                 color: 0xFFC300,
                                                 description: "Thank you for applying!"
-                                            }
-                                                .catch(collected9 => {
+                                            }                                      .catch(collected9 => {
                                                     message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
                                                 })
                                             })
