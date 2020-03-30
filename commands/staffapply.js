@@ -4,17 +4,18 @@ module.exports.run = async (bot, message, args) => {
     testList = [`vraag 1:`, `vraag 2:`, `vraag 4:`, `vraag 5:`];
     for (var i = 0; i < testList.length; i++) {
         let embed = new discord.MessageEmbed()
-            .setTitle(testList[i]);
+            .setTitle(testList[i])
+            .setColor(`0xFFC300`);
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
-                console.log(Collect.first().content);
+                var answers = Collect
             })
         })
     }
-    var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-    kanaal.send(embed);
     let embed = new discord.MessageEmbed()
-    .setTitle(Collect);
+        .setTitle(answers)
+        .setColor(`0xFFC300`);
+    message.channel.send(embed);
 }
 module.exports.help = {
     name: "test"
