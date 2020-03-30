@@ -12,10 +12,7 @@ module.exports.run = async (bot, message, args) => {
             })
         })
     }
-    let answers = new discord.MessageEmbed()
-        .setTitle(answers)
-        .setColor(`0xFFC300`);
-    message.channel.send(answers);
+    await message.channel.send(answers)
 }
 module.exports.help = {
     name: "test"
