@@ -11,11 +11,11 @@ module.exports.run = async (bot, message, args) => {
                 answers = Collect
             })
         })
+        let embed2 = new discord.MessageEmbed()
+        .setTitle(answers)
+        .setColor(`0xFFC300`);
+        await message.channel.send(embed2)
     }
-    const embed2 = new discord.MessageEmbed()
-    .setColor('0xFFC300')
-    .setTitle(answers)
-await message.channel.send(embed2)
 }
 module.exports.help = {
     name: "test"
