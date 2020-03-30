@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
             .setColor(`0xFFC300`);
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
-                var answers = Collect
+                answers = Collect
             })
         })
     }
