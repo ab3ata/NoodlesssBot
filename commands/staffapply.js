@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         })
     }
     var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-    await kanaal.send(Collect);
+    await kanaal.send(``);
 
 }
 module.exports.help = {
