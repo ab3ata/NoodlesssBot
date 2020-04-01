@@ -9,12 +9,7 @@ module.exports.run = async (bot, message, args) => {
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
                 if (i === 3) {
-                    let embed = new discord.MessageEmbed()
-                        .setTitle(`New staffapply!`)
-                        .setColor(`0xFFC300`)
-                        .addFields(
-                            { name: testList[0], value: Collect.first().content},
-                        );
+                    console.log(Collect.first().content)
                 }
             })
         })
