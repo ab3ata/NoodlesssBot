@@ -11,10 +11,10 @@ module.exports.run = async (bot, message, args) => {
                 if (i === 3) {
                     let embed = new discord.MessageEmbed()
                         .setTitle(`New staffapply!`)
-                        .setColor(`0xFFC300`);
+                        .setColor(`0xFFC300`)
                         .addFields(
                             { name: testList[0], value: Collect},
-                        )
+                        );
                 }
             })
         })
