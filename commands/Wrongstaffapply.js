@@ -89,7 +89,7 @@ module.exports.run = async (bot, message, args) => {
                                             description: "if you would see your friend hacking what would you do? ban them permanent | ban them temp | just warn him and tell him to stop"
                                         }
                                             .catch(collected8 => {
-                                                message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+                                               iage.reply('you reacted with neither a thumbs up, nor a thumbs down.');
                                             })
                                     });
                                     message.channel.awaitMessages(filter, { max: 1 }).then(collected9 => {
