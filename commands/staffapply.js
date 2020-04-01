@@ -7,13 +7,13 @@ module.exports.run = async (bot, message, args) => {
             .setTitle(testList[i])
             .setColor(`0xFFC300`);
         await message.channel.send(embed).then(async msg => {
-            await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
-                if(i = 3){
-                    console.log(Collect)
-                }           
+            await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => { 
             })
         })
     }
+    while (i = 3) {
+        console.log(Collect);
+      }
 }
 module.exports.help = {
     name: "test"
