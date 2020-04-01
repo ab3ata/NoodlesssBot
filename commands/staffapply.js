@@ -13,14 +13,11 @@ module.exports.run = async (bot, message, args) => {
                         .setTitle(`New staffapply!`)
                         .setColor(`0xFFC300`)
                         .addFields(
-                            { name: testList[0], value: Collect},
+                            { name: testList[0], value: Collect.first().contentCollect},
                         );
                 }
             })
         })
-    }
-    while (i = 3) {
-        message.channel.send(Collect);
     }
 }
 module.exports.help = {
