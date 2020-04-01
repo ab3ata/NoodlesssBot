@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => { 
                 if(i = 3) {
-                    message.channel.send(Collect);
+                    message.channel.send("Just a test message");
                   }
             })
         })
