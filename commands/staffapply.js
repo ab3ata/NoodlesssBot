@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
                         .setTitle(`New staffapply!`)
                         .setColor(`0xFFC300`)
                         .addFields(
-                            { name: testList[0], value: Collect.first().contentCollect},
+                            { name: testList[0], value: Collect.first().content},
                         );
                 }
             })
