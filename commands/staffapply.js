@@ -7,16 +7,21 @@ module.exports.run = async (bot, message, args) => {
             .setTitle(testList[i])
             .setColor(`0xFFC300`);
         await message.channel.send(embed).then(async msg => {
-            await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => { 
-                if(i === 3) {
-                    message.channel.send("Just a test message");
-                  }
+            await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
+                if (i === 3) {
+                    let embed = new discord.MessageEmbed()
+                        .setTitle(`New staffapply!`)
+                        .setColor(`0xFFC300`);
+                        .addFields(
+                            { name: testList[0], value: Collect},
+                        )
+                }
             })
         })
     }
     while (i = 3) {
         message.channel.send(Collect);
-      }
+    }
 }
 module.exports.help = {
     name: "test"
