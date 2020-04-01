@@ -8,7 +8,9 @@ module.exports.run = async (bot, message, args) => {
             .setColor(`0xFFC300`);
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
-                await message.channel.send(Collect);
+                message.channel.send(Collect);
+                var kanaal = message.guild.channels.cache.find(c => c.name == "commands");
+                kanaal.send(commands);
             })
         })
     }
