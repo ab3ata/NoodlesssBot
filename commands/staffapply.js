@@ -9,10 +9,10 @@ module.exports.run = async (bot, message, args) => {
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
                 var testvar = Collect
+                console.log(testvar);
             })
         })
     }
-    console.log(testvar);
 }
 module.exports.help = {
     name: "test"
