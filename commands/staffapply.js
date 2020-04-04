@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
                 var testvar = Collect
                 while (i === 3) {
                     i++
-                    console.log(testvar)
+                    channel.message.send(testvar)
                   }
             })
         })
