@@ -8,12 +8,11 @@ module.exports.run = async (bot, message, args) => {
             .setColor(`0xFFC300`);
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
-                if (i === 3) {
-                    console.log(Collect.first().content)
-                }
+                var testvar = Collect
             })
         })
     }
+    console.log(testvar);
 }
 module.exports.help = {
     name: "test"
