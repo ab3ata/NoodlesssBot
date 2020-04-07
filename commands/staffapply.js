@@ -2,7 +2,6 @@ const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
     const filter = m => m.author.id === message.author.id;
     testList = [`question 1:`, `question 2:`, `question 4:`, `question 5:`];
-    if (command === 'apply') {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
@@ -24,8 +23,6 @@ module.exports.run = async (bot, message, args) => {
                     })
                 })
             }
-        }
-
         message.channel.send(`First argument: ${args[0]}`);
     }
 }
