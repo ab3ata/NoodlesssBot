@@ -8,10 +8,9 @@ module.exports.run = async (bot, message, args) => {
             .setColor(`0xFFC300`);
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
-                let username = Collect.first().content
+                Collect.array();
                 while (i === 3) {
                     i++
-                    Collect.array();
                     Array.from(Collect);
                     message.channel.send(Collect.first(5));
                     
