@@ -29,7 +29,10 @@ module.exports.run = async (bot, message, args) => {
     }
     let embed = new discord.MessageEmbed()
     .setColor(`#0xFFC300`)
-    .setTitle(answers)
+    .setTitle(`New staff application`)
+    .addFields(
+      { name: questions, value: answers }
+    )
   var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
   kanaal.send(embed);
   }
