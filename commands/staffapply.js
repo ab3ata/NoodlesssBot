@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args) => {
     testList = [`question 1:`, `question 2:`, `question 4:`, `question 5:`];
     if (!args.length) {
         message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        wait(5000)
         message.channel.bulkDelete(2, true)
     }
     else if (args[0] === 'staff') {
