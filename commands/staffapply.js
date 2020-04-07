@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
       }
       const generator = generateQuestions(message);
       const answers = [];
-d
+
       for await (const answer of generator) {
         if (!answer) {
           return;
