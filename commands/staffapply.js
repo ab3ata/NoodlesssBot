@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
                 .setTitle(testList[i])
                 .setColor(`0xFFC300`);
             await message.channel.send(embed).then(async msg => {
-                await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
+                await message.channel.awaitMessages(filter, { max: 100 }).then(Collect => {
                     Collect.array();
                     while (i === 3) {
                         i++
