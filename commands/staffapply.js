@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
+  const filter = m => m.author.id === message.author.id;
   const questions = ["What is your name?", "What is your age?"];
 
   async function* generateQuestions(message) {
