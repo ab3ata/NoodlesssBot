@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor(`#0xFFC300`)
     .setTitle(`new staff application!`)
     .addField(
-      { name: questions[0], value: `test`}
+      { name: `test`, value: answers}
     )
   var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
   kanaal.send(embed);
