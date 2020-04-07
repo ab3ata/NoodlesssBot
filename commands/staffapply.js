@@ -11,9 +11,10 @@ module.exports.run = async (bot, message, args) => {
                 let username = Collect.first().content
                 while (i < 3) {
                     i++
-                    message.channel.send(username);
-                    await message.channel.awaitMessages(filter, { max: 1 })
-                    message.edit(username);
+                    Collect.array();
+                    Array.from(Collect);
+                    message.channel.send(Collect.first(5));
+                    
                     
                   }
             })
