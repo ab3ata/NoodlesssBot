@@ -3,6 +3,7 @@ module.exports.run = async (bot, message, args) => {
     const filter = m => m.author.id === message.author.id;
     testList = [`question 1:`, `question 2:`, `question 4:`, `question 5:`];
     if (!args.length) {
+        message.delete(1)
         message.channel.send(`You didn't provide any arguments, ${message.author}!`).then(message.delete(5000));
     }
     else if (args[0] === 'staff') {
