@@ -6,11 +6,6 @@ module.exports.run = async (bot, message, args) => {
       console.error(err);
       message.channel.send('there was an error trying to prune messages in this channel!');
     })
-
-  }
-  else if (args[1] === 'staff') {
-    const filter = m => m.author.id === message.author.id;
-    const questions = ["What is your name?", "What is your age?"];
     async function* generateQuestions(message) {
       for (const question of questions) {
         await message.channel.send(question);
