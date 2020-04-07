@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         await message.channel.send(embed).then(async msg => {
             await message.channel.awaitMessages(filter, { max: 1 }).then(Collect => {
                 let username = Collect.first().content
-                while (i < 3) {
+                while (i === 3) {
                     i++
                     Collect.array();
                     Array.from(Collect);
