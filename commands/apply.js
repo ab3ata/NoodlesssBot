@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
         { name: questions[3], value: answers[3] }
       )      
       .setFooter(`applicant: ${messsage.author}`)
-      .setImage(message.member.avatarURL)
+      .setImage(member.avatarURL)
     var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
     kanaal.send(embed);
   }
