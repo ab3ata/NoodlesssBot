@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
         { name: `!apply builder`, value: `do this command to apply for the builder position` },        
     )
     return message.channel.send(embed).then(msg => {
-      msg.delete(10000)
+      message.delete(10000)
     })
   }
   else if (args[0] === 'staff') {
