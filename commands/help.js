@@ -20,6 +20,7 @@ module.exports.run = async (bot, message, args) => {
         { name: `!apply builder`, value: `do this command to apply for the builder position` },
         { name: `!work`, value: `an command to see if it works?` },        
     )
+    message.channel.send(embed);
     }
 }
 module.exports.help = {
