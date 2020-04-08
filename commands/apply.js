@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   const filter = m => m.author.id === message.author.id;
-  const questions = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be staff?", ""];
+  const questions = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be staff?"];
 
   if (!args.length) {
     return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
