@@ -4,14 +4,15 @@ module.exports.run = async (bot, message, args) => {
   const questions = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be staff?"];
 
   if (!args.length) {
-    return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+    message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+    return message.channel.bulkDelete(2, true);
   }
   else if (args[0] === 'staff') {
     async function* generateQuestions(message) {
       for (const question of questions) {
         let embed = new discord.MessageEmbed()
-        .setColor(`#0xFFC300`)
-        .setDescription(question)
+          .setColor(`#0xFFC300`)
+          .setDescription(question)
         await message.channel.send(embed);
 
         yield message.channel
@@ -30,18 +31,20 @@ module.exports.run = async (bot, message, args) => {
 
       answers.push(answer);
     }
+    yield message.channel
+    message.channel.bulkDelete(5, true);
     let embed = new discord.MessageEmbed()
-    .setColor(`#0xFFC300`)
-    .setTitle(`New staff application`)
-    .addFields(
-      { name: questions[0], value: answers[0] },
-      { name: questions[1], value: answers[1] },
-      { name: questions[2], value: answers[2] },
-      { name: questions[3], value: answers[3] },
-      { name: questions[4], value: answers[4] }
-    )
-  var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
-  kanaal.send(embed);
+      .setColor(`#0xFFC300`)
+      .setTitle(`New staff application`)
+      .addFields(
+        { name: questions[0], value: answers[0] },
+        { name: questions[1], value: answers[1] },
+        { name: questions[2], value: answers[2] },
+        { name: questions[3], value: answers[3] }
+      )      
+      .setAuthor(`applicant: ${message.author}`)
+    var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
+    kanaal.send(embed);
   }
 }
 module.exports.help = {
