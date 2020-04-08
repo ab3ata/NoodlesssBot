@@ -4,8 +4,17 @@ module.exports.run = async (bot, message, args) => {
   const questions = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be staff?"];
 
   if (!args.length) {
-    message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-    return message.channel.bulkDelete(2, true);
+    let embed = new discord.MessageEmbed()
+    .setTitle(`Help`)
+    .setDescription(`this is a list of help commands:`)
+    .setColor(`#0xFFC300`)
+    .addFields(
+        { name: `!apply staff`, value: `do this command to apply for the staff position` },
+        { name: `!apply builder`, value: `do this command to apply for the builder position` },        
+    )
+    return message.channel.send(embed).then(msg => {
+      msg.delete(10000)
+    })
   }
   else if (args[0] === 'staff') {
     async function* generateQuestions(message) {
