@@ -45,9 +45,6 @@ module.exports.run = async (bot, message, args) => {
     var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
     kanaal.send(embed);
   }
-  
-  
-  const filter = m => m.author.id === message.author.id;
   const questions = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be builder?"];
 
   if (!args.length) {
