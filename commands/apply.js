@@ -12,9 +12,6 @@ module.exports.run = async (bot, message, args) => {
         { name: `!apply staff`, value: `do this command to apply for the staff position` },
         { name: `!apply builder`, value: `do this command to apply for the builder position` },        
     )
-    return message.channel.send(embed).then(msg => {
-      message.channel.delete(10000)
-    })
   }
   else if (args[0] === 'staff') {
     async function* generateQuestions(message) {
