@@ -83,24 +83,24 @@ module.exports.run = async (bot, message, args) => {
     }
 
     const generator = generateQuestions(message);
-    const answers = [];
+    const answersbuilder = [];
 
     for await (const answer of generator) {
       if (!answer) {
         return;
       }
 
-      answers.push(answer);
+      answersbuilder.push(answer);
     }
     message.channel.bulkDelete(9, true);
     let embed = new discord.MessageEmbed()
       .setColor(`#0xFFC300`)
       .setTitle(`New builder application`)
       .addFields(
-        { name: questionsbuilder[0], value: answers[0] },
-        { name: questionsbuilder[1], value: answers[1] },
-        { name: questionsbuilder[2], value: answers[2] },
-        { name: questionsbuilder[3], value: answers[3] }
+        { name: questionsbuilder[0], value: answersbuilder[0] },
+        { name: questionsbuilder[1], value: answersbuilder[1] },
+        { name: questionsbuilder[2], value: answersbuilder[2] },
+        { name: questionsbuilder[3], value: answersbuilder[3] }
       )
       .setFooter(`applicant: ${messsage.author}`)
     var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
