@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
 
       answers.push(answer);
     }
-    message.channel.bulkDelete(5, true);
+    message.channel.bulkDelete(9, true);
     let embed = new discord.MessageEmbed()
       .setColor(`#0xFFC300`)
       .setTitle(`New staff application`)
@@ -41,7 +41,8 @@ module.exports.run = async (bot, message, args) => {
         { name: questions[2], value: answers[2] },
         { name: questions[3], value: answers[3] }
       )      
-      .setAuthor(`applicant: ${message.author}`)
+      .setFooter(`applicant: ${messsage.author}`)
+      .setImage(message.member.avatarURL)
     var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
     kanaal.send(embed);
   }
