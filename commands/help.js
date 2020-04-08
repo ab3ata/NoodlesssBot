@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     )
     message.channel.send(embed);
 
-    if(member.roles.cache.has('role-id-here')){
+    if(member.roles.cache.has('668221965198426113')){
     let embed = new discord.MessageEmbed()
     .setTitle(`Help`)
     .setDescription(`this is a list of help commands:`)
