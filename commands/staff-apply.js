@@ -102,7 +102,7 @@ module.exports.run = async (bot, message, args) => {
         { name: questionsbuilder[2], value: answersbuilder[2] },
         { name: questionsbuilder[3], value: answersbuilder[3] }
       )
-      .setFooter(`applicant: ${messsage.author}`)
+      .setFooter(`applicant: ${message.author}`)
     var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
     kanaal.send(embed);
   }
