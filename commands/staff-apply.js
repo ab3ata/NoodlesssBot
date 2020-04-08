@@ -5,12 +5,12 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args.length) {
     let embed = new discord.MessageEmbed()
-    .setTitle(`Help`)
+    .setTitle(`Apply Help`)
     .setDescription(`this is a list of help commands:`)
     .setColor(`#0xFFC300`)
     .addFields(
         { name: `!apply staff`, value: `do this command to apply for the staff position` },
-        { name: `!apply builder`, value: `do this command to apply for the builder position` },        
+        { name: `Comming soon!`, value: `Comming Soon!` },        
     )
   }
   else if (args[0] === 'staff') {
