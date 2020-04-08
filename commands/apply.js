@@ -31,7 +31,6 @@ module.exports.run = async (bot, message, args) => {
 
       answers.push(answer);
     }
-    yield message.channel
     message.channel.bulkDelete(5, true);
     let embed = new discord.MessageEmbed()
       .setColor(`#0xFFC300`)
