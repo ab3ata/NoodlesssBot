@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args) => {
   const questions = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be staff?"];
 
   if (!args.length) {
+    message.bulkDelete(1, true);
     let embed = new discord.MessageEmbed()
       .setTitle(`Apply Help`)
       .setDescription(`this is a list of help commands:`)
