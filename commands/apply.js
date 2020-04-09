@@ -13,8 +13,7 @@ module.exports.run = async (bot, message, args) => {
         { name: `!apply staff`, value: `do this command to apply for the staff position` },
         { name: `!apply builder`, value: `do this command to apply for the builder position` },
       )
-    message.channel.send(embed);
-    message.delete(({ timeout: 15000 }));
+    message.channel.send(embed).then(message.delete(({ timeout: 15000 })));
   }
   else if (args[0] === 'staff') {
     async function* generateQuestions(message) {
