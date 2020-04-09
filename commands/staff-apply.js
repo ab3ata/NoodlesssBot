@@ -10,9 +10,9 @@ module.exports.run = async (bot, message, args) => {
     .setColor(`#0xFFC300`)
     .addFields(
         { name: `!apply staff`, value: `do this command to apply for the staff position` },
-        { name: `Comming soon!`, value: `Comming Soon!` },        
+        { name: `!apply builder`, value: `do this command to apply for the builder position` },        
     )
-    message.channel.send(embed);
+    message.channel.send(embed).then(message.delete(10000));
   }
   else if (args[0] === 'staff') {
     async function* generateQuestions(message) {
@@ -60,7 +60,7 @@ module.exports.run = async (bot, message, args) => {
 
   const questionsbuilder = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be builder?"];
   if (!args.length) {
-    
+
   }
   else if (args[0] === 'builder') {
     async function* generateQuestions(message) {
