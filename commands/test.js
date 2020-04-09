@@ -8,7 +8,6 @@ msg.react(`🤔`)
 msg.awaitReactions(`🤔`)
 })
 }
-new Discord.ReactionCollector(message, filter, options);
 module.exports.help = {
     name: "testingpurposecommand"
 }
