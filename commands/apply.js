@@ -5,14 +5,17 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args.length) {
     let embed = new discord.MessageEmbed()
-    .setTitle(`Apply Help`)
-    .setDescription(`this is a list of help commands:`)
-    .setColor(`#0xFFC300`)
-    .addFields(
+      .setTitle(`Apply Help`)
+      .setDescription(`this is a list of help commands:`)
+      .setColor(`#0xFFC300`)
+      .addFields(
         { name: `!apply staff`, value: `do this command to apply for the staff position` },
-        { name: `!apply builder`, value: `do this command to apply for the builder position` },        
-    )
-    message.channel.send(embed).then(message.delete(10000));
+        { name: `!apply builder`, value: `do this command to apply for the builder position` },
+      )
+    message.channel.send(embed);
+    message.delete(10000)
+      .then(msg => console.log(`Deleted message from ${msg.author.username}`))
+      .catch(console.error);
   }
   else if (args[0] === 'staff') {
     async function* generateQuestions(message) {
