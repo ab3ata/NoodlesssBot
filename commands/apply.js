@@ -13,9 +13,7 @@ module.exports.run = async (bot, message, args) => {
         { name: `!apply builder`, value: `do this command to apply for the builder position` },
       )
     message.channel.send(embed);
-    message.delete(10000)
-      .then(msg => console.log(`Deleted message from ${msg.author.username}`))
-      .catch(console.error);
+    message.delete(5000);
   }
   else if (args[0] === 'staff') {
     async function* generateQuestions(message) {
