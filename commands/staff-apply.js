@@ -59,8 +59,10 @@ module.exports.run = async (bot, message, args) => {
 
 
   const questionsbuilder = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be builder?"];
+  if (!args.length) {
+    
   }
-  if (args[0] === 'builder') {
+  else if (args[0] === 'builder') {
     async function* generateQuestions(message) {
       for (const question of questionsbuilder) {
         let embed = new discord.MessageEmbed()
@@ -98,6 +100,7 @@ module.exports.run = async (bot, message, args) => {
     var kanaal = message.guild.channels.cache.find(c => c.name == "application-log");
     kanaal.send(embed);
   }
+}
 module.exports.help = {
   name: "apply"
 }
