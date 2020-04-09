@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
   const questions = ["minecraft name:", "real name: (not needed)", "age:", "why do you want to be staff?"];
 
   if (!args.length) {
-    message.delete(timeout(100));
+    message.delete(({ timeout: 20 }));
     let embed = new discord.MessageEmbed()
       .setTitle(`Apply Help`)
       .setDescription(`this is a list of help commands:`)
@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
         { name: `!apply builder`, value: `do this command to apply for the builder position` },
       )
     message.channel.send(embed);
-    message.delete(timeout(5000));
+    message.delete(({ timeout: 15000 }));
   }
   else if (args[0] === 'staff') {
     async function* generateQuestions(message) {
