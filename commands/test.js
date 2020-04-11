@@ -1,6 +1,8 @@
 const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
-    message.react('👌')
+  let embed = new discord.MessageEmbed()
+  .setTitle("test")  
+  message.react('👌')
   .then(console.log)
   .catch(console.error);
     const filter = (reaction, user) => reaction.emoji.name === '👌' && user.id === 'someID';
