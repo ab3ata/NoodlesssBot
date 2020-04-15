@@ -33,7 +33,7 @@ bot.on("ready", async () => {
 
     console.log('LightMc bot is online!');
 
-    bot.user.setActivity("NOODLESSS", { type: "PLAYING" });
+    bot.user.setActivity("NOODLESSS", { type: "EATING" });
 
 });
 
