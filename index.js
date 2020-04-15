@@ -31,7 +31,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
 
-    console.log('LightMc bot is online!');
+    console.log('NOODLES bot is online!');
 
     bot.user.setActivity("GIVING LENA NOODLESS", { type: "" });
 
