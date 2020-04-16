@@ -20,10 +20,10 @@ module.exports.run = async (bot, message, args) => {
 
     await (member.roles.add(muteRole.id));
 
-    message.channel.send(`${user} has been muted for ${muteTime}`);
+    messages.channel.send(`${user} has been muted for ${muteTime}`);
 
     setTimeout(function() {
-        member.roles.remove(muteRole.id);
+        members.roles.remove(muteRole.id);
 
         message.channel.send(`${user} has been unmuted`);
     }, ms(muteTime));
