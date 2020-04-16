@@ -2,7 +2,7 @@ const discord = require("discord.js");
 const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
     
-    if(!user.hasPermission("KICK_MEMBERS")) return message.channel.send("sorry you do not have permission to do this command");
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("sorry you do not have permission to do this command");
 
     var user = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
 
