@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(user.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant mute this person")
 
-    var muteRole = message.guild.roles.cache.find(role => role.name === muted);
+    var muteRole = message.guild.roles.cache.find(role => role.name === "muted");
 
     if(!muteRole) return message.channel.send("this role doesnt exist");
 
