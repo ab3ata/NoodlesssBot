@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     message.author.send(text);
 
-    message.channel.send("you got spammed in pm :)").then(message.delete(5000))
+    message.channel.send("you got spammed in pm :)").message.delete(5000)
 }
 module.exports.help = {
     name: "spamme"
