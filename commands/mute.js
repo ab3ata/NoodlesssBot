@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("sorry you do not have permission to do this command");
 
-    var user = message.guild.member(message.mention.users.first() || message.guild.members.get(args[0]));
+    var user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
     if (!user) return message.channel.send("please say a valid username");
 
