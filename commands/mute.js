@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!user) return message.channel.send("please say a valid username");
 
-    if(message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Sorry you cant mute this person")
+    //if(message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Sorry you cant mute this person")
 
     var muteRole = message.guild.roles.cache.find(role => role.name === "muted");
 
