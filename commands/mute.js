@@ -21,8 +21,8 @@ module.exports.run = async (bot, message, args) => {
     let embed = new discord.MessageEmbed()
     .setTitle("Muted")
     .setDescription(`the player ${user} has been muted for ${muteTime}!`)
-    message.channel.send(embed).then(message.channel.bulkDelete(2, { timeout: 10000}));
-
+    var kanaal = message.guild.channels.cache.find(c => c.name == "𝓵𝓸𝓰𝓼");
+    kanaal.send(embed).then(message.channel.delete(10000))
     setTimeout(function() {
         user.roles.remove(muteRole.id);
 
