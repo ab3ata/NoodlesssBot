@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
     message.delete({timeout: 10000})
     let embed = new discord.MessageEmbed()
     .setTitle("Muted")
-    .setDescription(`the player ${user} has been muted by: ${member} for ${muteTime}!`)
+    .setDescription(`the player ${user} has been muted by: (nog niet toegevoegd) for ${muteTime}!`)
     .setColor("#ffe09c")
     var kanaal = message.guild.channels.cache.find(c => c.name == "𝓵𝓸𝓰𝓼");
     kanaal.send(embed)
