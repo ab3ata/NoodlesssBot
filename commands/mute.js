@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     if(!muteTime) return message.channel.send("say a time")
 
     await (user.roles.add(muteRole.id));
-    message.channel.send(`Succesfully muted ${user}`).then(message.delete({timeout: 10000}))
+    message.delete({timeout: 10000})
     let embed = new discord.MessageEmbed()
     .setTitle("Muted")
     .setDescription(`the player ${user} has been muted for ${muteTime}!`)
@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     setTimeout(function() {
         user.roles.remove(muteRole.id);
 
-        message.channel.send(`${user} has been unmuted`);
+
     }, ms(muteTime));
 }
 }
