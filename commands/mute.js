@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!user) return message.channel.send("please say a valid username");
 
-    if (message.member.roles.cache.some(role => role.name === '𝓒𝓸 𝓛𝓮𝓪𝓭𝓮𝓻')) {message.channel.send("Sorry you cant mute this person")
+    if (message.member.roles.cache.some(role => role.name === '𝓒𝓸 𝓛𝓮𝓪𝓭𝓮𝓻')){
 
     var muteRole = message.guild.roles.cache.find(role => role.name === "muted");
 
