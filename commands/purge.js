@@ -7,15 +7,16 @@ module.exports.run = async (bot, message, args) => {
     if(Number.isInteger(parseInt(args[0]))){
 
         var amount = parseInt(args[0]) + 1;
+        var number = parseInt(args[0]);
 
         message.channel.bulkDelete(amount).then(() => {
 
             if(args[0] == 0){
                 message.channel.send(`i cant delete 0 messages you dumb`).then(msg => msg.delete(5000))
             }else if(args[0] == 1){
-                message.channel.send(`i deleted ${amount} message`).then(msg => msg.delete(5000))
+                message.channel.send(`i deleted ${number} message`).then(msg => msg.delete(5000))
             }else{
-                message.channel.send(`i deleted ${amount} messages`).then(msg => msg.delete(5000))
+                message.channel.send(`i deleted ${number} messages`).then(msg => msg.delete(5000))
             }
          });
 
