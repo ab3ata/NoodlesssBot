@@ -37,6 +37,13 @@ bot.on("ready", async () => {
 
 });
 
+bot.on('guildMemberAdd', member => {
+    console.log('User' + member.user.tag + 'has joined the server!');
+  
+    var role = member.guild.roles.find('name', 'user');
+    member.addRole('𝓜𝓮𝓶𝓫𝓮𝓻');
+  });
+
 bot.on("message", async message => {
 
     if (message.author.bot) return;
