@@ -39,9 +39,8 @@ bot.on("ready", async () => {
 
 bot.on('guildMemberAdd', member => {
     console.log('User' + member.user.tag + 'has joined the server!');
-  
-    var role = member.guild.roles.find('name', 'user');
-    var muteRole = message.guild.roles.cache.find(role => role.name === "𝓜𝓮𝓶𝓫𝓮𝓻");
+
+    var role = message.guild.roles.cache.find(role => role.name === "𝓜𝓮𝓶𝓫𝓮𝓻");
     user.roles.add(muteRole.id);
 });
 
