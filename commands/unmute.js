@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     await (user.roles.add(muteRole.id));
     message.delete({timeout: 10000})
     let embed = new discord.MessageEmbed()
-    .setTitle("UnMute")
+    .setTitle("UnMute:")
     .setDescription(`the player ${user} has been unmuted by: ${message.author.username}`)
     .setColor("#ffe09c")
     var kanaal = message.guild.channels.cache.find(c => c.name == "𝓵𝓸𝓰𝓼");
