@@ -36,14 +36,6 @@ bot.on("ready", async () => {
     bot.user.setActivity("GIVING LENA NOODLESS", { type: "" });
 
 });
-
-bot.on('guildMemberAdd', member => {
-    console.log('User' + member.user.tag + 'has joined the server!');
-
-    var role = message.guild.roles.cache.find(role => role.name === "𝓜𝓮𝓶𝓫𝓮𝓻");
-    user.roles.add(muteRole.id);
-});
-
 bot.on("message", async message => {
 
     if (message.author.bot) return;
