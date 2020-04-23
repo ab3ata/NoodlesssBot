@@ -20,8 +20,8 @@ module.exports.run = async (bot, message, args) => {
     await (user.roles.add(muteRole.id));
     message.delete({timeout: 10000})
     let embed = new discord.MessageEmbed()
-    .setTitle("Muted")
-    .setDescription(`the player ${user} has been muted for: ${muteTime} by: ${message.author.username} for: ${args[2], args[3],args[4], args[5],args[6], args[7],args[8], args[9],args[10], args[11],args[12], args[13],args[14], args[15],args[16], args[17],args[18], args[19], args[20]}!`)
+    .setTitle("Mute:")
+    .setDescription(`the player ${user} has been muted for: ${muteTime} by: ${message.author.username}`)
     .setColor("#ffe09c")
     var kanaal = message.guild.channels.cache.find(c => c.name == "𝓵𝓸𝓰𝓼");
     kanaal.send(embed)
