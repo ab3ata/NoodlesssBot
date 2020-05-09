@@ -89,11 +89,11 @@ bot.on("message", async message => {
         });
 
         var embedLevel = new discord.MessageEmbed()
-        .setDescription("***Level Up***")
+        .setDescription("**Level Up**")
         .setColor("#42f5ec")
         .addField("New Level:", levelSystem[idUser].level);
 
-        message.channel.send(embedLevel).then(embedLevel.delete({timeout: 10000}), message.delete({timeout: 500}))
+        message.channel.send(embedLevel).then(message.bulkdelete({timeout: 10000}))
 
     }
 });
