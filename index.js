@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
+const levelSystem = require("./data/levels.json")
 
 const fs = require("fs")
 
@@ -56,6 +57,45 @@ bot.on("message", async message => {
     var commands = bot.commands.get(command.slice(prefix.length));
 
     if(commands) commands.run(bot, message, arguments);
+
+    var randomXp = Math.floor(Math.random(1) * 15) + 1;
+
+    var idUser = message.author.id;
+
+    if(!levelSystem[idUser]){
+
+        levelSystem[idUser] = {
+
+        xp: 0,
+        level: 0
+       
+        }
+    }
+
+    levelSystem[idUser].xp += randomXp;
+
+    var levelUser = levelSystem[idUser].level;
+    var xpUser = levelSystem[idUser].xp;
+    var nextLevel = levelUser * 300;
+
+    if(nextLevel === 0) nextLevel = 100;
+
+    if(xpUser >= nextLevel){
+
+        levelSystem[idUser].level += 1;
+
+        fs.writeFile("./data/levels.json", JSON.stringify(levelSystem), err =>{
+            if(err) console.log(err);
+        });
+
+        var embedLevel = new discord.MessageEmbed()
+        .setDescription("***Level Up***")
+        .setColor("#42f5ec")
+        .addField("New Level:", levelSystem[idUser].level);
+
+        message.channel.send(embedLevel).then({timeout: 10000})
+
+    }
 });
 
 

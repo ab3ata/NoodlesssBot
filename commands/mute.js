@@ -27,7 +27,12 @@ module.exports.run = async (bot, message, args) => {
     kanaal.send(embed)
     setTimeout(function() {
         user.roles.remove(muteRole.id);
-
+        let embed = new discord.MessageEmbed()
+        .setTitle("Unmute:")
+        .setDescription(`the mute for ${user} has expired`)
+        .setColor("#ffe09c")
+        var kanaal = message.guild.channels.cache.find(c => c.name == "𝓵𝓸𝓰𝓼");
+        kanaal.send(embed)
 
     }, ms(muteTime));
 }
