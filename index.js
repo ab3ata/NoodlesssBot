@@ -67,7 +67,7 @@ bot.on("message", async message => {
         levelSystem[idUser] = {
 
         xp: 0,
-        level: 0
+        level: 1
        
         }
     }

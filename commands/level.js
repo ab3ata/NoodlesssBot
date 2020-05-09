@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         levelSystem[idUser] = {
 
         xp: 0,
-        level: 0
+        level: 1
        
         }
     }
