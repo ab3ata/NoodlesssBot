@@ -94,7 +94,7 @@ bot.on("message", async message => {
         .setColor("#42f5ec")
         .addField("New Level:", levelSystem[idUser].level);
 
-        message.channel.send(embedLevel).then(message.bulkdelete({timeout: 10000}))
+        message.channel.send(embedLevel).then(message.delete({timeout: 10000}))
 
     }
 });
