@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("xp:", xpUser, true)
     .setFooter(`${whenNextLevel} xp need until levelup`);
 
-    message.channel.send(embedLevel).then({timeout: 10000})
+    message.channel.send(embedLevel).then(embedLevel.delete({timeout: 10000}), message.delete({timeout: 500}));
 
 }
 module.exports.help = {
