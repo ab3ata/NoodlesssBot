@@ -76,7 +76,7 @@ bot.on("message", async message => {
 
     var levelUser = levelSystem[idUser].level;
     var xpUser = levelSystem[idUser].xp;
-    var nextLevel = levelUser * 300;
+    var nextLevel = levelUser * 100;
 
     if(nextLevel === 0) nextLevel = 100;
 
