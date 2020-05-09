@@ -89,6 +89,7 @@ bot.on("message", async message => {
         });
 
         var embedLevel = new discord.MessageEmbed()
+        .setTitle(message.author.username)
         .setDescription("**Level Up**")
         .setColor("#42f5ec")
         .addField("New Level:", levelSystem[idUser].level);
@@ -99,4 +100,4 @@ bot.on("message", async message => {
 });
 
 
-bot.login(process.env.token);
+bot.login("NjYzMzQ5NzcyODcwMjIxODQ0.XpcK7A.d1Wg_X62_gC0wJZbQBJiZCGJK1U");
