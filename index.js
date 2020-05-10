@@ -100,7 +100,7 @@ bot.on("message", async message => {
         .setTitle(message.author.username)
         .setDescription("**Level Up**")
         .setColor("#42f5ec")
-        .addField("New Level:", levelSystem[idUser].level);
+        .addField(`New Level: ${levelSystem[idUser].level}`);
 
         message.channel.send(embedLevel).then(message.delete({timeout: 10000}))
 
