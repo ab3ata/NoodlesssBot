@@ -34,7 +34,7 @@ fs.readdir("./commands/", (err, files) => {
         member.roles.add(role);
 
         var welcome = new discord.MessageEmbed()
-        .setTitle(`Welcome ${message.author.username}`)
+        .setTitle(`Welcome!!`)
         .addField("To the discord noodles faction")
         .addField("we hope you enjoy your time here, dont forget to read the rules :D");
         message.author.send(welcome);
