@@ -26,20 +26,6 @@ fs.readdir("./commands/", (err, files) => {
         bot.commands.set(fileGet.help.name, fileGet);
 
     })
-     bot.on("guildMemberAdd", member => {
-        var role = member.guild.roles.cache.get("663374934676078597");
-
-        if(!role) return;
-
-        member.roles.add(role);
-
-        var welcome = new discord.MessageEmbed()
-        .setTitle(`Welcome!!`)
-        .addField("To the discord noodles faction")
-        .addField("we hope you enjoy your time here, dont forget to read the rules :D");
-        message.author.send(welcome);
-
-    });
 
 });
 
@@ -111,6 +97,21 @@ bot.on("message", async message => {
         message.channel.send(embedLevel).then(message.delete({timeout: 10000}))
 
     }
+
+    bot.on("guildMemberAdd", member => {
+        var role = member.guild.roles.cache.get("663374934676078597");
+
+        if(!role) return;
+
+        member.roles.add(role);
+
+        var welcome = new discord.MessageEmbed()
+        .setTitle(`Welcome ${message.author.username}`)
+        .addField("To the discord noodles faction")
+        .addField("we hope you enjoy your time here, dont forget to read the rules :D");
+        message.author.send(welcome);
+
+    });
 });
 
 
