@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#42f5ec")
     .addField("Level:", levelUser, true)
     .addField("xp:", xpUser, true)
-    .setFooter(`${whenNextLevel} xp need until levelup`);
+    .setFooter(`you need ${whenNextLevel} xp to level `);
 
     message.channel.send(embedLevel).then(message.delete({timeout: 500}));
 
