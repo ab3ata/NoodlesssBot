@@ -107,8 +107,7 @@ bot.on("message", async message => {
 
         var welcome = new discord.MessageEmbed()
         .setTitle(`Welcome ${message.author.username}`)
-        .addField("To the discord noodles faction")
-        .addField("we hope you enjoy your time here, dont forget to read the rules :D");
+        .setDescription("To the discord noodles faction, please read the rules before going further")
         message.author.send(welcome);
 
     });
