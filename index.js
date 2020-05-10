@@ -97,20 +97,20 @@ bot.on("message", async message => {
         message.channel.send(embedLevel).then(message.delete({timeout: 10000}))
 
     }
-    client.on("guildMemberAdd", member =>{
+    client.on("guildMemberAdd", member => {
         var role = member.guild.role.cache.get("663374934676078597");
 
         if(!role) return;
 
-        member.role.add(role);
+        member.roles.add(role);
 
         var welcome = new discord.MessageEmbed()
-        .setTitle(`Welcome message.author.username`)
+        .setTitle(`Welcome ${message.author.username}`)
         .addField("To the discord noodles faction")
         .addField("we hope you enjoy your time here, dont forget to read the rules :D");
-        message.author.send(welcome)
+        message.author.send(welcome);
 
-    })
+    });
 });
 
 
