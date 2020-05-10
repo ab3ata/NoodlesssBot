@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
 
     var levelUser = levelSystem[idUser].level;
     var xpUser = levelSystem[idUser].xp;
-    var nextLevel = levelUser * 100;
+    var nextLevel = levelUser * 1000;
 
     var whenNextLevel = nextLevel - xpUser
 
