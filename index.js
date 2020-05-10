@@ -26,7 +26,7 @@ fs.readdir("./commands/", (err, files) => {
         bot.commands.set(fileGet.help.name, fileGet);
 
     })
-    client.on("guildMemberAdd", member => {
+     client.on("guildMemberAdd", member => {
         var role = member.guild.role.cache.get("663374934676078597");
 
         if(!role) return;
