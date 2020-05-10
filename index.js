@@ -42,6 +42,19 @@ bot.on("message", async message => {
     if (message.author.bot) return;
 
 
+    bot.on("guildMemberAdd", member => {
+        var role = member.guild.roles.cache.get(`663374934676078597`);
+
+        if(!role) return;
+
+        member.roles.add(role);
+
+        var welcome = new discord.MessageEmbed()
+        .setTitle(`Welcome ${message.author.username}`)
+        .setDescription("To the discord noodles faction, please read the rules before going further")
+        message.author.send(welcome);
+
+    });
 
     if (message.channel.type === "dm") return;
 
@@ -97,20 +110,6 @@ bot.on("message", async message => {
         message.channel.send(embedLevel).then(message.delete({timeout: 10000}))
 
     }
-
-    bot.on("guildMemberAdd", member => {
-        var role = member.guild.roles.cache.get("663374934676078597");
-
-        if(!role) return;
-
-        member.roles.add(role);
-
-        var welcome = new discord.MessageEmbed()
-        .setTitle(`Welcome ${message.author.username}`)
-        .setDescription("To the discord noodles faction, please read the rules before going further")
-        message.author.send(welcome);
-
-    });
 });
 
 
