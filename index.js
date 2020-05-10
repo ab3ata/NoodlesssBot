@@ -27,7 +27,7 @@ fs.readdir("./commands/", (err, files) => {
 
     })
      client.on("guildMemberAdd", member => {
-        var role = member.guild.role.cache.get("663374934676078597");
+        var role = member.guild.roles.cache.get("663374934676078597");
 
         if(!role) return;
 
