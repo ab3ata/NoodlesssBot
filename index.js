@@ -34,7 +34,7 @@ bot.on("ready", async () => {
 
     console.log('NOODLES bot is online!');
 
-    bot.user.setActivity("GIVING LENA NOODLESS", { type: "" });
+    bot.user.setActivity("LENA EATING NOODLESS", { type: "WATCHING" });
 
 });
 bot.on("message", async message => {
@@ -74,6 +74,7 @@ bot.on("message", async message => {
     var randomXp = Math.floor(Math.random(1) * 15) + 1;
 
     var idUser = message.author.id;
+    
 
     if(!levelSystem[idUser]){
 
