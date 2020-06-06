@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("Help menu NoodlesBot")
         .setDescription("Commands:")
         .addField(prefix + `help`, `The command for this help menu!`)
-        .addField(prefix + `level`, `See your level with this command!`)
         .addField(prefix + `suggest`, `make a suggestion with this!`)
 
 
@@ -32,7 +31,6 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("Mod Help menu NoodlesBot")
     .setDescription("Commands:")
     .addField(prefix + `help`, `The command for this help menu!`)
-    .addField(prefix + `level`, `See your level with this command!`)
     .addField(prefix + `suggest`, `make a suggestion with this!`)
     .addField(prefix + `mute`, `silence someone when he is not following the rules`)
     .addField(prefix + `unmute`, `if somebody muted someone wrongly`)
