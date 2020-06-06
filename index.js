@@ -90,7 +90,7 @@ bot.on("message", async message => {
 
     var levelUser = levelSystem[idUser].level;
     var xpUser = levelSystem[idUser].xp;
-    var nextLevel = levelUser * 1000000000000000000s;
+    var nextLevel = levelUser * 1000s;
 
     if(nextLevel === 2) nextLevel = 500;
 
