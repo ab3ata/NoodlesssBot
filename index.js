@@ -32,7 +32,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
 
-    console.log('NOODLES bot is online!');
+    console.log('NOODLESS bot is online!');
 
     bot.user.setActivity("LENA EATING NOODLESS", { type: "WATCHING" });
 
